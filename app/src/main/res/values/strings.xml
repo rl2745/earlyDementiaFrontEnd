@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Early Dementia Detection</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_user_name">User\'s Full Name</string>
+    <string name="prompt_user_dob">User\'s Date of Birth (MM/DD/YYYY)</string>
+    <string name="prompt_doctor_name">Doctor\'s Full Name</string>
+    <string name="prompt_doctor_number">Doctor\'s Phone Number</string>
+    <string name="submit">Submit</string>
+    <string name="confirm">Confirm</string>
+</resources>
