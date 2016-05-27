@@ -4,21 +4,29 @@
     api-level="19"
     density="xxhdpi"
     format="7"
-    timestamp="1464337873739716000" >
+    timestamp="1464344641764584000" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="126" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="21" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
 
-    <build timestamp="1464337873739716000" />
+    <artifact
+        location="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="1464344641764584000" >
+        <artifact
+            location="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
 
 </instant-run>

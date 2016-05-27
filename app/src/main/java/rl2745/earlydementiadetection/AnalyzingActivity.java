@@ -30,6 +30,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -78,17 +80,30 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
     //connect to backend here
     public void backEndProcesses() throws Exception {
 
-        callServer server = new callServer();
-        server.execute();
-        String result = server.get();
-        if(result.equals("true")) {
-            sendSMS();
-        }
-        else{
-            Thread.sleep(5000);
-            backEndProcesses();
-        }
+//      callServer server = new callServer();
+//      server.execute();
+//        String result = server.get();
+//        if(result.equals("true")) {
+//            sendAnalyze(view);
+//        }
+//        else{
+//            Thread.sleep(5000);
+//            backEndProcesses();
+//        }
 
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    sendAnalyze(findViewById(R.id.notification));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 10000);
+
+        //sendAnalyze(findViewById(R.id.notification));
 
     }
 
@@ -113,7 +128,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     private String sendPost() throws Exception {
 
-        String url = "http://967b11bb.ngrok.io";
+        String url = "http://c56a8507.ngrok.io";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -125,9 +140,11 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
         //Stuff to send to Server
         String result = "";
         while(a.size() > 0){
-            result += a.remove(0);
+            result += a.get(0);
+            a.remove(0);
         }
         String postParameters = result;
+        postParameters = "bananas";
 
         // Send post request
         con.setDoOutput(true);
@@ -135,16 +152,6 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
         wr.writeBytes(postParameters);
         wr.flush();
         wr.close();
-
-        int responseCode = con.getResponseCode();
-        System.out.println("Response Code:  " + responseCode);
-
-//        //add request headers
-//        con.setRequestProperty("Accept", "*/*");
-//        con.setRequestProperty("X-AYLIEN-TextAPI-Application-Key",
-//                "KEY");
-//        con.setRequestProperty("X-AYLIEN-TextAPI-Application-ID", "ID");
-//        con.setRequestProperty("accept-encoding", "gzip");
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -207,6 +214,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
                 i = i + 1;
 
             }
+            is.close();
         } catch (Exception e) {
             Log.d(TAG, "error in CSV reading");
 
@@ -246,8 +254,8 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     protected void createLocationRequest() {
         LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(5000);
+        mLocationRequest.setFastestInterval(5000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
