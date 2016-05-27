@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,7 +24,10 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 /**
@@ -56,14 +60,94 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.standardMessage);
         layout.addView(textView);
-        backEndProcesses();
+        try {
+            backEndProcesses();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
 
-    public void backEndProcesses() {
-        //connect to backend here
+    //connect to backend here
+    public void backEndProcesses() throws Exception {
 
+        callServer server = new callServer();
+        server.execute();
+        String result = server.get();
+        if(result.equals("true")) {
+            sendSMS();
+        }
+        else{
+            Thread.sleep(5000);
+            backEndProcesses();
+        }
+
+
+    }
+
+    /**
+     * Queries the text API for the text summary
+     *
+     */
+    private class callServer extends AsyncTask<String, String, String> {
+
+        private String response;
+
+        @Override
+        protected String doInBackground(String[] params) {
+            try {
+                response = sendPost();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return response;
+        }
+    }
+
+    private String sendPost() throws Exception {
+
+        String url = "http://967b11bb.ngrok.io";
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        // optional default is GET
+        con.setRequestMethod("POST");
+
+        //Stuff to send to Server
+        String postParameters = "banana";
+
+        // Send post request
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(postParameters);
+        wr.flush();
+        wr.close();
+
+        int responseCode = con.getResponseCode();
+        System.out.println("Response Code:  " + responseCode);
+
+//        //add request headers
+//        con.setRequestProperty("Accept", "*/*");
+//        con.setRequestProperty("X-AYLIEN-TextAPI-Application-Key",
+//                "KEY");
+//        con.setRequestProperty("X-AYLIEN-TextAPI-Application-ID", "ID");
+//        con.setRequestProperty("accept-encoding", "gzip");
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //return result
+        System.out.println(response.toString());
+        return response.toString();
     }
 
     /**Sends SMS message to doctor*/
@@ -87,7 +171,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
                     Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(),
-                    "SMS faild, please try again later!",
+                    "SMS failed, please try again later!",
                     Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }

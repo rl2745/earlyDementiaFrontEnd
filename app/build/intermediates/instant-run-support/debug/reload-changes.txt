@@ -1,0 +1,2 @@
+CHANGED,/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/rl2745/earlydementiadetection/AnalyzingActivity$override.class
+CHANGED,/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
