@@ -1,6 +1,7 @@
 package rl2745.earlydementiadetection;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,7 @@ public class ConfirmationActivity extends AppCompatActivity {
                 " notify your doctor if we detect signs of early dementia.";
         TextView textView = new TextView(this);
         textView.setTextSize(20);
+        textView.setTextColor(Color.WHITE);
         textView.setText(introduction);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.confirmation);

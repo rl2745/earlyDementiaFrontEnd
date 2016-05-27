@@ -1,6 +1,7 @@
 package rl2745.earlydementiadetection;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
@@ -21,6 +22,7 @@ public class NotificationActivity extends AppCompatActivity {
         String notificationText = "Anomalous Behavior Detected - Your Doctor Has Been Notified";
         TextView textView = new TextView(this);
         textView.setTextSize(20);
+        textView.setTextColor(Color.WHITE);
         textView.setText(notificationText);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.notification);
