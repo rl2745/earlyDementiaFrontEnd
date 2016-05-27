@@ -1,6 +1,7 @@
 package rl2745.earlydementiadetection;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -28,6 +29,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 
 /**
@@ -39,6 +41,8 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
     private static final String TAG = "AnalyzingActivity";
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
+    public Context currentContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,8 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
 
     }
+
+
 
     //connect to backend here
     public void backEndProcesses() throws Exception {
@@ -115,8 +121,13 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
         // optional default is GET
         con.setRequestMethod("POST");
 
+        ArrayList<String> a = readfromCSV();
         //Stuff to send to Server
-        String postParameters = "banana";
+        String result = "";
+        while(a.size() > 0){
+            result += a.remove(0);
+        }
+        String postParameters = result;
 
         // Send post request
         con.setDoOutput(true);
@@ -178,21 +189,21 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     }
 
-    public String[] readfromCSV() {
+    public ArrayList<String> readfromCSV() {
         try {
             InputStreamReader is;
             BufferedReader reader;
             is = new InputStreamReader(getAssets().open("test.csv"));
             reader = new BufferedReader(is);
             reader.readLine();
-            String[] lines = new String[20];
+            ArrayList<String> lines = new ArrayList<String>();
 
 
             String line;
             int i = 0;
             while ((line = reader.readLine()) != null) {
                 Log.d(TAG, line);
-                lines[i] = line;
+                lines.add(line);
                 i = i + 1;
 
             }
@@ -267,6 +278,13 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
             Log.d(TAG, mLastLocation.getLatitude() + "");
             Log.d(TAG, mLastLocation.getLongitude() + "");
         }
+
+        Log.d(TAG, "lat: " + mLastLocation.getLatitude() + " | long: " + mLastLocation.getLongitude());
+        CharSequence text = "lat: " + mLastLocation.getLatitude() + " | long: " + mLastLocation.getLongitude();
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+        toast.show();
     }
     /**
      * Called when the Back-End spots an anomaly
