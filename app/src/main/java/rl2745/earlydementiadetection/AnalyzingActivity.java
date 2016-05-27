@@ -1,6 +1,7 @@
 package rl2745.earlydementiadetection;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
@@ -24,6 +25,7 @@ public class AnalyzingActivity extends AppCompatActivity {
         String standardMessage = "Analyzing Habits - Run App in Background";
         TextView textView = new TextView(this);
         textView.setTextSize(20);
+        textView.setTextColor(Color.WHITE);
         textView.setText(standardMessage);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.standardMessage);

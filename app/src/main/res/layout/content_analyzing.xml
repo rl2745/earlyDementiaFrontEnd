@@ -4,6 +4,8 @@
     android:id="@+id/scroll"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:textColor="@android:color/white"
+    android:background="@drawable/mobile_wallpapers_360_640_16"
     android:paddingTop="70dp">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
