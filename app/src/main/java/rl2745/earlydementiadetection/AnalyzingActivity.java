@@ -47,7 +47,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_analyzing);
 
@@ -66,6 +66,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.standardMessage);
         layout.addView(textView);
+
         try {
             backEndProcesses();
         } catch (Exception e) {
@@ -80,16 +81,29 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
     //connect to backend here
     public void backEndProcesses() throws Exception {
 
-//      callServer server = new callServer();
-//      server.execute();
-//        String result = server.get();
-//        if(result.equals("true")) {
-//            sendAnalyze(view);
-//        }
-//        else{
-//            Thread.sleep(5000);
-//            backEndProcesses();
-//        }
+      callServer server = new callServer();
+      server.execute();
+        String result = server.get();
+        if(result.equals("true")) {
+            //sendSMS();
+            sendAnalyze(findViewById(R.id.notification));
+
+        }
+        else{
+
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        sendAnalyze(findViewById(R.id.notification));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, 10000);
+            //sendAnalyze(findViewById(R.id.notification));
+       }
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -128,7 +142,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     private String sendPost() throws Exception {
 
-        String url = "http://c56a8507.ngrok.io";
+        String url = "http://536b6fe3.ngrok.io";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -140,11 +154,11 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
         //Stuff to send to Server
         String result = "";
         while(a.size() > 0){
-            result += a.get(0);
-            a.remove(0);
+              result += a.get(0);
+              a.remove(0);
         }
         String postParameters = result;
-        postParameters = "bananas";
+
 
         // Send post request
         con.setDoOutput(true);
@@ -206,7 +220,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
             ArrayList<String> lines = new ArrayList<String>();
 
 
-            String line;
+            String line = "";
             int i = 0;
             while ((line = reader.readLine()) != null) {
                 Log.d(TAG, line);
@@ -215,6 +229,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
             }
             is.close();
+            return lines;
         } catch (Exception e) {
             Log.d(TAG, "error in CSV reading");
 

@@ -184,20 +184,20 @@
         "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.0/res/drawable-mdpi-v4/common_google_signin_btn_icon_dark_disabled.9.png"
     },
     {
-        "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/places_ic_clear.png",
         "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.0/res/drawable-mdpi-v4/places_ic_clear.png"
     },
     {
-        "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/powered_by_google_light.png",
-        "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.0/res/drawable-mdpi-v4/powered_by_google_light.png"
+        "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png",
         "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/powered_by_google_light.png",
+        "source": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.0/res/drawable-mdpi-v4/powered_by_google_light.png"
     },
     {
         "merged": "/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/common_plus_signin_btn_icon_light_focused.9.png",
