@@ -22,6 +22,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 
 /**
  * Created by Richard Lopez on 5/26/2016.
@@ -58,13 +61,13 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     }
 
-    public void backEndProcesses(){
+    public void backEndProcesses() {
         //connect to backend here
 
     }
 
     /**Sends SMS message to doctor*/
-    public void sendSMS(){
+    public void sendSMS() {
         //http://www.mkyong.com/android/how-to-send-sms-message-in-android/
 
         Intent intent = getIntent();
@@ -91,6 +94,31 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     }
 
+    public String[] readfromCSV() {
+        try {
+            InputStreamReader is;
+            BufferedReader reader;
+            is = new InputStreamReader(getAssets().open("test.csv"));
+            reader = new BufferedReader(is);
+            reader.readLine();
+            String[] lines = new String[20];
+
+
+            String line;
+            int i = 0;
+            while ((line = reader.readLine()) != null) {
+                Log.d(TAG, line);
+                lines[i] = line;
+                i = i + 1;
+
+            }
+        } catch (Exception e) {
+            Log.d(TAG, "error in CSV reading");
+
+        }
+        return null;
+    }
+
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -110,6 +138,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
     @Override
     protected void onStart() {
         mGoogleApiClient.connect();
+        readfromCSV();
         super.onStart();
     }
 
@@ -126,9 +155,15 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
         mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-        LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient, mLocationRequest, this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
+            LocationServices.FusedLocationApi.requestLocationUpdates(
+                    mGoogleApiClient, mLocationRequest, this);
+        }
+        else{
+            LocationServices.FusedLocationApi.requestLocationUpdates(
+                    mGoogleApiClient, mLocationRequest, this);
+        }
     }
 
     @Override
