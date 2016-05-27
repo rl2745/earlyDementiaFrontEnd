@@ -4,34 +4,26 @@
     api-level="22"
     density="560dpi"
     format="7"
-    timestamp="1464348299037027000" >
+    timestamp="1464352561257506000" >
 
     <task
         name="javac"
-        duration="84" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="24" />
+        duration="0" />
     <task
         name="verifier"
-        duration="3" />
+        duration="0" />
 
-    <artifact
-        location="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-        type="DEX" />
-
-    <build timestamp="1464348120638603000" >
+    <build timestamp="1464352422849880000" >
         <artifact
             location="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="1464348299037027000" >
-        <artifact
-            location="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
-    </build>
+    <build timestamp="1464352561257506000" />
 
 </instant-run>

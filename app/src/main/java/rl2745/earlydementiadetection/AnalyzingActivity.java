@@ -47,7 +47,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_analyzing);
 
@@ -84,12 +84,28 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
       callServer server = new callServer();
       server.execute();
         String result = server.get();
-        if(result.equals("true")) {
-            //sendSMS();
-            sendAnalyze(findViewById(R.id.notification));
+        try {
+            if (result.equals("true")) {
+                //sendSMS();
+                sendAnalyze(findViewById(R.id.notification));
 
+            } else {
+
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        try {
+                            sendAnalyze(findViewById(R.id.notification));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, 10000);
+                //sendAnalyze(findViewById(R.id.notification));
+            }
         }
-        else{
+        catch (Exception e) {
 
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
@@ -102,20 +118,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
                     }
                 }
             }, 10000);
-            //sendAnalyze(findViewById(R.id.notification));
-       }
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    sendAnalyze(findViewById(R.id.notification));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 10000);
+        }
 
         //sendAnalyze(findViewById(R.id.notification));
 
@@ -142,7 +145,7 @@ public class AnalyzingActivity extends AppCompatActivity implements GoogleApiCli
 
     private String sendPost() throws Exception {
 
-        String url = "http://536b6fe3.ngrok.io";
+        String url = "http://a8307c38.ngrok.io";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();

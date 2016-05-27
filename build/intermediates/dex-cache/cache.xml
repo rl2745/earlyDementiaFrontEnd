@@ -1,2 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0ac75598ca9d6f2760ac721104ddb14257cc6c80">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_03559c19a49d11d26cc678d41082257cca95b645/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_34461e91d5700fbcd4d858fdc529a904ed2ca243/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a819aae4f0c711e50b4fd633922a3c1a176cb51e">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.0.0_193a02c5031466604960ae4a1a51ecdfc85acd61/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_0aab2e202f5c8c2e876a755520edda7b679e8d25/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.0.0_e621ccd04f635d42aec83a0b1493293b6aaf37d6/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="04e670ba630e8021dccad72aa13ba2daadd5cfd2">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e5a2f46542cfdedb8889efd8edb7ce5ba9d86371/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_e115a0715ece5d8fb37df7105d52ece1dbf8c4bd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_03463d17f9d68023101fb461bf0372b536f22575/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="59cca9b91688dc2467754d36793b3d23bebd21a9">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.0.0_1051d73347d9e7928e1378917a24a14f78fba097/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_5b09eadcbc1968de74c1644388cfa54dd0ab4fb9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/libs/opencsv-3.7.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d5416b3a41618422e12337c2d3b6152f0cd4d311">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/2/opencsv-3.7_f3c4264e5ed653928d443e2ac61c4bda2adcd5e4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.0_f8649f35275c60c2c85fad61caa550cef281509a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.0.0_dd3746290625b288152e60989a5efa147b65b0c2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.0_98d4ac41871271fed4bb4005be2f1766b72ebfef/classes.dex" />
+    </item>
+    <item
+        jar="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/davidbang/Desktop/earlyDementiaFrontEnd/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_db15a5de7f6bd907e6234c8c9e7f4b3006a2a81b/classes.dex" />
+    </item>
+
+</items>
